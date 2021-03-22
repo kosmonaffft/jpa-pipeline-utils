@@ -15,7 +15,7 @@
 package space.kosmonaffft.utils.jpa;
 
 import jakarta.persistence.EntityManager;
-import space.kosmonaffft.utils.jpa.base.Mapper;
+import space.kosmonaffft.utils.jpa.base.MapperNew;
 import space.kosmonaffft.utils.jpa.impl.SelectByIdPipeline;
 
 import java.io.Serializable;
@@ -34,7 +34,7 @@ public class EntityLogic {
     }
 
     public <EntityClass, EntityIdClass extends Serializable, DtoClass> SelectByIdPipeline<EntityClass, EntityIdClass, DtoClass> select(Class<EntityClass> entityClass,
-                                                                                                                                       Supplier<Mapper<EntityClass, DtoClass>> mapperSupplier) {
+                                                                                                                                       Supplier<MapperNew<EntityClass, DtoClass>> mapperSupplier) {
         return new SelectByIdPipeline<EntityClass, EntityIdClass, DtoClass>(entityManager, entityClass, mapperSupplier.get());
     }
 

@@ -14,9 +14,7 @@
 
 package space.kosmonaffft.utils.jpa.base;
 
-public interface Mapper<FromClass, ToClass> {
-
-    ToClass map(FromClass from);
+public interface MapperExists<FromClass, ToClass> {
 
     void map(FromClass from, ToClass to);
 }

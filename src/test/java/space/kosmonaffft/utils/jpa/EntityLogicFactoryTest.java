@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import space.kosmonaffft.utils.jpa.base.Mapper;
+import space.kosmonaffft.utils.jpa.base.MapperNew;
 
 class EntityLogicFactoryTest {
 
@@ -18,7 +18,7 @@ class EntityLogicFactoryTest {
     @Test
     void selectById() {
         EntityLogic entityLogic = EntityLogicFactory.build(entityManager);
-        entityLogic.select(Object.class, () -> new Mapper<Object, Object>() {
+        entityLogic.select(Object.class, () -> new MapperNew<Object, Object>() {
             @Override
             public Object map(Object from) {
                 return null;
